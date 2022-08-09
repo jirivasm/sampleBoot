@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     //     environment {
     //     ENV_DOCKER = credentials('dockerhub')
     //     DOCKERIMAGE = "dummy/dummy"
@@ -15,8 +15,8 @@ pipeline {
             }
         }
         stage('sonarqube') {
-         agent {
-             docker { image 'sonarqube:8.9.9-community' } }
+        //  agent {
+        //      docker { image 'sonarqube:8.9.9-community' } }
             steps {
                 sh 'echo scanning!'
             }
